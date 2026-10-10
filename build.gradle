@@ -1,9 +1,9 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'idea'
     id 'net.neoforged.moddev' version '2.0.148'
-    id 'org.jetbrains.kotlin.jvm'
+    id 'idea'
+
 }
 
 version = mod_version
@@ -99,7 +99,6 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 
 dependencies {
-    testImplementation 'org.jetbrains.kotlin:kotlin-test'
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
@@ -169,7 +168,4 @@ idea {
         downloadSources = true
         downloadJavadoc = true
     }
-}
-kotlin {
-    jvmToolchain(21)
 }
