@@ -6,8 +6,6 @@ import net.neoforged.bus.api.IEventBus;
 public interface Scope<S, K> {
   K keyOf(S scope);
 
-  boolean isActive(S scope);
-
   void onStart(IEventBus bus, Consumer<? super S> started);
 
   void onEnd(IEventBus bus, Consumer<? super K> ended);

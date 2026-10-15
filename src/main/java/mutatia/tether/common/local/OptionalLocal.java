@@ -19,8 +19,6 @@ public final class OptionalLocal<S, T extends AutoCloseable> extends AbstractLoc
 
   @Override
   void start(S scope) {
-    this.factory
-        .apply(scope)
-        .ifPresent((value) -> this.storage.put(this.scope.keyOf(scope), value));
+    this.storage.start(this.scope.keyOf(scope), this.factory.apply(scope).orElse(null));
   }
 }

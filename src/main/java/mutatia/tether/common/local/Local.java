@@ -23,6 +23,6 @@ public final class Local<S, T extends AutoCloseable> extends AbstractLocal<S, T>
 
   @Override
   void start(S scope) {
-    this.storage.put(this.scope.keyOf(scope), this.factory.apply(scope));
+    this.storage.start(this.scope.keyOf(scope), this.factory.apply(scope));
   }
 }

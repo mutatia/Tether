@@ -20,7 +20,7 @@ abstract sealed class AbstractLocal<S, T extends AutoCloseable> permits Local, O
   }
 
   void requireActive(S scope) {
-    if (!this.scope.isActive(scope)) {
+    if (!this.storage.isActive(this.scope.keyOf(scope))) {
       throw new IllegalStateException(
           "Attempted to access local "
               + this.id
